@@ -8,7 +8,7 @@
         <hr class="border-t border-gray-700" />
       </nav>
     </aside>
-    <div class="w-full p-4">
+    <div class="w-full p-4 bg-gray-100">
       <router-view v-slot="{ Component }">
         <suspense :timeout="0">
           <template #default>
@@ -31,6 +31,10 @@ export default {
 
   components: {
     Loading
+  },
+
+  setup () {
+
   }
 }
 </script>
