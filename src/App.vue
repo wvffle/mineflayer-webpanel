@@ -9,20 +9,22 @@
       </nav>
     </aside>
     <div class="w-full p-4">
-      <suspense>
-        <template #default>
-          <router-view />
-        </template>
-        <template #fallback>
-          <Loading />
-        </template>
-      </suspense>
+      <router-view v-slot="{ Component }">
+        <suspense :timeout="0">
+          <template #default>
+            <component :is="Component" />
+          </template>
+          <template #fallback>
+            <Loading />
+          </template>
+        </suspense>
+      </router-view>
     </div>
   </main>
 </template>
 
 <script>
-import Loading from './components/Loading'
+import Loading from './components/Loading.vue'
 
 export default {
   name: 'App',

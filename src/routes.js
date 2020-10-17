@@ -1,5 +1,7 @@
+import { defineAsyncComponent } from 'vue'
+
 function loadView (name) {
-    return () => import(`./views/${name}.vue`)
+    return defineAsyncComponent(() => import(`./views/${name}.vue`))
 }
 
 export default [
