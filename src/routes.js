@@ -5,7 +5,7 @@ function loadView (name) {
 }
 
 export default [
-  { path: '/', name: 'index', component: loadView('RunningInstances') },
+  { path: '/', name: 'index', component: loadView('Bots') },
   { path: '/projects', name: 'projects', component: loadView('Projects') },
   { path: '/:path(.*)*', name: 'not-found', component: loadView('NotFound') }
 ]
