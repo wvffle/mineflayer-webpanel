@@ -20,8 +20,8 @@ jobs:
     - name: Install NPM Modules
       run: npm install
 
-    - name: Run Standard
-      run: standard
+    - name: Run Lint
+      run: npm run lint
 
   deploy:
     runs-on: ubuntu-latest

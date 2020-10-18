@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "start": "node backend/index.mjs"
+    "start": "node backend/index.mjs",
+    "lint": "standard"
   },
   "dependencies": {
     "@zhuowenli/vue-feather-icons": "^5.0.2",
