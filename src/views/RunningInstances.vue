@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 class="text-2xl pb-4">Running Instances</h1>
     <div class="grid grid-cols-4 p-4 rounded-lg shadow-sm mb-4 bg-white select-none">
       <div @click="toggle('name')" class="cursor-pointer flex items-center hover:underline">
         Name
