@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <div v-for="bot of bots" class="grid grid-cols-6 p-4 rounded-lg shadow-sm mb-4 bg-white cursor-pointer select-none">
+    <router-link :to="`/bots/${bot.id}`" tag="div" v-for="bot of bots" class="grid grid-cols-6 p-4 rounded-lg shadow-sm mb-4 bg-white cursor-pointer select-none">
       <div>
         <h1 class="text-lg text-orange-400 font-bold pb-2">Name:</h1>
         {{ bot.name }}
@@ -54,7 +54,7 @@
         {{ bot.runningInstances }} / {{ bot.instances.length }}
       </div>
       <div class="flex items-center text-2xl">
-        <div @click.stop="bot.actions.showInstances = !bot.actions.showInstances" class="cursor-pointer hover:text-orange-400 py-2 px-2">
+        <div @click.stop.prevent="bot.actions.showInstances = !bot.actions.showInstances" class="cursor-pointer hover:text-orange-400 py-2 px-2">
           <more-horizontal-icon size="1x" />
         </div>
       </div>
@@ -91,15 +91,15 @@
                 <Toggle class="mr-2" v-model="instance.autoRestart" />
               </td>
               <td class="p-2">
-                <div class="cursor-pointer hover:text-orange-400 py-2 px-2 text-base">
+                <router-link tag="div" :to="`/bots/${bot.id}/${instance.id}`" class="cursor-pointer hover:text-orange-400 py-2 px-2 text-base">
                   <edit-icon size="1x" />
-                </div>
+                </router-link>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-    </div>
+    </router-link>
   </div>
 </template>
 
@@ -152,9 +152,9 @@ export default {
         cpu: 0,
         memory: 0,
         instances: [
-          { enabled: false, name: 'digger-1', errors: 2, state: 'CRASHED', autoRestart: false },
-          { enabled: false, name: 'digger-2', errors: 0, state: 'STOPPED', autoRestart: true },
-          { enabled: true, name: 'digger-3', errors: 4, state: 'RUNNING', autoRestart: true }
+          { enabled: false, name: 'digger-1', errors: 2, state: 'CRASHED', autoRestart: false, id: 'bbbbcccc' },
+          { enabled: false, name: 'digger-2', errors: 0, state: 'STOPPED', autoRestart: true, id: 'bbbbdddd' },
+          { enabled: true, name: 'digger-3', errors: 4, state: 'RUNNING', autoRestart: true, id: 'bbbbeeee' }
         ]
       }
     ]
