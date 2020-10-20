@@ -55,7 +55,9 @@
       </div>
 
       <h2 class="text-xl pb-2 px-4">Inventory</h2>
-      <img src="https://i.imgur.com/2YloN5c.png" alt="Inventory background" class="mx-4 mb-2">
+      <div class="mx-4">
+        <img src="/src/assets/inventory.png" alt="Inventory background" class="w-full mb-2" style="image-rendering: crisp-edges;">
+      </div>
 
       <div class="px-4 text-xs relative max-h-full overflow-y-hidden">
         <div class="absolute top-0 left-0 w-full h-8" style="background: linear-gradient(180deg, #f7fafc 10%, transparent 90%)"></div>
